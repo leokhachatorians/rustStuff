@@ -15,16 +15,20 @@ fn get_conversion_type()-> String {
 	println!("Do you want to convert to Celsius or Fahrenheit?");
 
 	let stdin = io::stdin();
-    let mut lines = stdin.lock().lines();
+	 let mut lines = stdin.lock().lines();
 
-    let input = match lines.next() {
-        Some(Ok(a)) => a,
-        _ => panic!("Couldn't read input.")
-    };
-    input.to_ascii_lowercase()
+    	let input = match lines.next() {
+        	Some(Ok(a)) => a,
+        	_ => panic!("Couldn't read input.")
+	 };
+    	input.to_ascii_lowercase()
 }
 
 fn get_temp() -> f64 {
+	/*
+	Get user input of the temprature wished to be converted.
+	Returns a 64bit float.
+	*/
 	let mut temprature = String::new();
 	println!("Please enter the temprature");
 
@@ -40,6 +44,10 @@ fn get_temp() -> f64 {
 }
 
 fn convert(choice: String, temprature: f64){
+	/*
+	Simple if block to determine what the choice was and to preform
+	the neccesary calculations.
+	*/
 	if choice == "fahrenheit"{
 		let fahr = temprature * (9.0/5.0) + 32.0;
 		println!("That is {:.2} degrees Fahrenheit", fahr);
