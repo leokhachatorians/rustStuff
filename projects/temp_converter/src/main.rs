@@ -15,13 +15,13 @@ fn get_conversion_type()-> String {
 	println!("Do you want to convert to Celsius or Fahrenheit?");
 
 	let stdin = io::stdin();
-	 let mut lines = stdin.lock().lines();
+	let mut lines = stdin.lock().lines();
 
-    	let input = match lines.next() {
-        	Some(Ok(a)) => a,
-        	_ => panic!("Couldn't read input.")
+    let input = match lines.next() {
+        Some(Ok(a)) => a,
+        _ => panic!("Couldn't read input.")
 	 };
-    	input.to_ascii_lowercase()
+    input.to_ascii_lowercase()
 }
 
 fn get_temp() -> f64 {
